@@ -1,14 +1,15 @@
 /**
  * Home/Index Page Styles
- * 
+ *
  * Styles speziell für die Startseite (index.php)
- * 
+ * Mit Background-Image und Olive-Grün Corporate Identity
+ *
  * @package EvaKoller
- * @version 1.0
+ * @version 2.1 - Komplett überarbeitet
  */
 
 /* ============================================
-   HERO SECTION
+   HERO SECTION MIT BACKGROUND
    ============================================ */
 
 .hero {
@@ -18,12 +19,39 @@
     justify-content: center;
     text-align: center;
     padding: 8rem 0 4rem;
-    background-color: var(--color-white);
+    position: relative;
+
+    /* Background Image */
+    background-image: url('../images/koller.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
+/* Optimiertes Overlay - Background sichtbarer */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+            135deg,
+            rgba(164, 178, 143, 0.75) 0%,
+            rgba(164, 178, 143, 0.65) 40%,
+            rgba(250, 248, 246, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+/* Hero Content */
 .hero-content {
     max-width: 700px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
@@ -38,7 +66,7 @@
 .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 300;
-    color: var(--color-accent);
+    color: var(--color-accent-dark);
     margin-bottom: 2rem;
     letter-spacing: 2px;
 }
@@ -54,7 +82,7 @@
 }
 
 /* ============================================
-   CONTENT GRID (für Physiotherapie & Fotografie Sections)
+   CONTENT GRID
    ============================================ */
 
 .content-grid {
@@ -78,7 +106,7 @@
     line-height: 1.8;
 }
 
-/* Service List */
+/* Service List mit Hover */
 .service-list {
     margin-top: 2rem;
 }
@@ -88,6 +116,13 @@
     border-bottom: 1px solid var(--color-border);
     color: var(--color-primary);
     font-weight: 400;
+    transition: var(--transition);
+}
+
+.service-list li:hover {
+    color: var(--color-accent);
+    padding-left: 0.5rem;
+    border-bottom-color: var(--color-accent-light);
 }
 
 .service-list li:last-child {
@@ -95,7 +130,7 @@
 }
 
 /* ============================================
-   ABOUT CONTENT (Über mich Section)
+   ABOUT CONTENT
    ============================================ */
 
 .about-content {
@@ -116,7 +151,11 @@
    ============================================ */
 
 .section-contact {
-    background-color: var(--color-light);
+    background: linear-gradient(
+            to bottom,
+            var(--color-light) 0%,
+            rgba(188, 201, 168, 0.15) 100%
+    );
 }
 
 .contact-grid {
@@ -162,6 +201,7 @@
 
 .contact-item a {
     color: var(--color-primary);
+    transition: var(--transition);
 }
 
 .contact-item a:hover {
@@ -180,6 +220,7 @@
     background-color: var(--color-white);
     padding: 2.5rem;
     border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(164, 178, 143, 0.12);
 }
 
 .form-group {
@@ -212,6 +253,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(164, 178, 143, 0.15);
 }
 
 .form-group textarea {
@@ -229,9 +271,9 @@
 
 .form-message.success {
     display: block;
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
+    background-color: rgba(164, 178, 143, 0.18);
+    color: var(--color-accent-dark);
+    border: 1px solid var(--color-accent);
 }
 
 .form-message.error {
@@ -246,36 +288,56 @@
    ============================================ */
 
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+        min-height: 80vh;
+        padding: 6rem 0 3rem;
+    }
+
+    /* Stärkeres Overlay auf Mobile */
+    .hero::before {
+        background: linear-gradient(
+                135deg,
+                rgba(164, 178, 143, 0.88) 0%,
+                rgba(164, 178, 143, 0.78) 50%,
+                rgba(250, 248, 246, 0.92) 100%
+        );
+    }
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
-    
+
     .hero-text {
         font-size: 1rem;
     }
-    
+
     .content-grid,
     .content-grid-reverse {
         grid-template-columns: 1fr;
         gap: 2rem;
         direction: ltr;
     }
-    
+
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .contact-form {
         padding: 2rem 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        min-height: 70vh;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
