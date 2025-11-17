@@ -13,8 +13,25 @@
 
 .page-hero {
     padding: 10rem 0 6rem;
-    background-color: var(--color-light);
+    background: linear-gradient(
+            135deg,
+            var(--color-light) 0%,
+            rgba(188, 201, 168, 0.1) 50%,
+            var(--color-light) 100%
+    );
     text-align: center;
+    position: relative;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(164, 178, 143, 0.08) 0%, transparent 70%);
+    pointer-events: none;
 }
 
 .page-hero-content {
@@ -36,6 +53,13 @@
     color: var(--color-accent);
     font-weight: 300;
     letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(164, 178, 143, 0.3);
+    transition: var(--transition);
+}
+
+.page-subtitle:hover {
+    color: var(--color-accent-dark);
+    letter-spacing: 2.5px;
 }
 
 /* ============================================
@@ -85,6 +109,12 @@
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--color-primary);
+    transition: var(--transition);
+    position: relative;
+}
+
+.service-card:hover .service-card-header h3 {
+    color: var(--color-accent-dark);
 }
 
 .service-card-body {
@@ -116,6 +146,12 @@
     position: absolute;
     left: 0;
     color: var(--color-accent);
+    transition: var(--transition);
+}
+
+.detail-list li:hover::before {
+    color: var(--color-accent-dark);
+    transform: translateX(3px);
 }
 
 /* ============================================
@@ -171,6 +207,15 @@
     color: var(--color-accent);
     margin-bottom: 1rem;
     opacity: 0.6;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    text-shadow: 0 2px 8px rgba(164, 178, 143, 0.3);
+}
+
+.process-step:hover .process-number {
+    opacity: 1;
+    color: var(--color-accent-dark);
+    transform: scale(1.15);
+    text-shadow: 0 4px 16px rgba(164, 178, 143, 0.5);
 }
 
 .process-step h3 {
