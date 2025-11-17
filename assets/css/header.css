@@ -48,8 +48,8 @@
 }
 
 .logo:hover {
-    opacity: 0.8;
-    transform: translateY(-1px);
+    opacity: 0.85;
+    transform: translateY(-0.5px);
 }
 
 .logo-text {
@@ -99,8 +99,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-accent);
-    transition: var(--transition);
+    background: linear-gradient(to right, var(--color-accent-light), var(--color-accent));
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -141,8 +141,8 @@
     .nav-link[href*="kontakt"]:hover {
         background-color: var(--color-accent);
         color: var(--color-white);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(164, 178, 143, 0.4);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-sm);
     }
 
     .nav-link[href*="kontakt"].active {
@@ -170,7 +170,7 @@
     width: 24px;
     height: 2px;
     background-color: var(--color-accent);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
@@ -204,7 +204,7 @@
         gap: 0;
         padding: 1.5rem 2rem;
         border-bottom: 2px solid var(--color-accent);
-        transition: var(--transition);
+        transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         align-items: flex-start;
     }
 

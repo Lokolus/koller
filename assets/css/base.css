@@ -42,10 +42,13 @@
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-secondary: Georgia, 'Times New Roman', serif;
 
-    /* Transitions & Effects */
-    --transition: all 0.3s ease;
-    --shadow-sm: 0 2px 8px rgba(164, 178, 143, 0.15);
-    --shadow-md: 0 4px 16px rgba(164, 178, 143, 0.22);
+    /* Transitions & Effects - Smooth & Ruhig */
+    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-sm: 0 2px 12px rgba(164, 178, 143, 0.12);
+    --shadow-md: 0 4px 20px rgba(164, 178, 143, 0.18);
+    --shadow-lg: 0 8px 32px rgba(164, 178, 143, 0.22);
 }
 
 /* ============================================
@@ -121,18 +124,19 @@ img {
     background-color: var(--color-accent);
     color: var(--color-white);
     border: 2px solid var(--color-accent);
-    box-shadow: 0 2px 8px rgba(164, 178, 143, 0.3);
+    box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
     background-color: var(--color-accent-dark);
     border-color: var(--color-accent-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(164, 178, 143, 0.45);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:active {
-    transform: translateY(-1px);
+    transform: translateY(0);
+    transition: all 0.1s ease;
 }
 
 /* ============================================
@@ -218,7 +222,7 @@ img {
     width: 0;
     height: 2px;
     background-color: var(--color-white);
-    transition: var(--transition);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-links a:hover {
