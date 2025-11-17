@@ -159,8 +159,8 @@
 }
 
 .photo-service-image:hover {
-    box-shadow: 0 8px 32px rgba(164, 178, 143, 0.25);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(164, 178, 143, 0.2);
+    transform: translateY(-1px);
 }
 
 .photo-service-image .placeholder-image {
@@ -169,7 +169,7 @@
 }
 
 .photo-service-image:hover .placeholder-image {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .photo-service-content h3 {
@@ -188,10 +188,10 @@
     bottom: -8px;
     left: 0;
     width: 0;
-    height: 3px;
+    height: 2px;
     background: linear-gradient(to right, var(--color-accent-light), var(--color-accent), var(--color-accent-dark));
     transition: var(--transition-slow);
-    box-shadow: 0 2px 8px rgba(164, 178, 143, 0.3);
+    box-shadow: 0 1px 4px rgba(164, 178, 143, 0.2);
 }
 
 .photo-service-content h3:hover {
@@ -199,7 +199,7 @@
 }
 
 .photo-service-content h3:hover::after {
-    width: 80px;
+    width: 60px;
 }
 
 .photo-service-content {
@@ -208,22 +208,17 @@
 }
 
 .photo-service-card:hover .photo-service-content {
-    transform: translateX(5px);
+    transform: translateX(2px);
 }
 
 .photo-service-card-reverse:hover .photo-service-content {
-    transform: translateX(-5px);
+    transform: translateX(-2px);
 }
 
 .photo-service-content p {
     color: var(--color-secondary);
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    transition: var(--transition);
-}
-
-.photo-service-content p:hover {
-    color: var(--color-primary);
 }
 
 .photo-detail-list {
@@ -254,12 +249,10 @@
 
 .photo-detail-list li:hover {
     color: var(--color-accent-dark);
-    padding-left: 1.8rem;
 }
 
 .photo-detail-list li:hover::before {
     color: var(--color-accent-dark);
-    transform: scale(1.3);
 }
 
 /* ============================================
