@@ -2,10 +2,10 @@
  * Home/Index Page Styles
  *
  * Styles speziell für die Startseite (index.php)
- * Mit Background-Image und Olive-Grün Corporate Identity
+ * Mit mehr Akzentfarbe und Olive-Grün Highlights
  *
  * @package EvaKoller
- * @version 2.1 - Komplett überarbeitet
+ * @version 2.2 - Mehr Akzentfarbe
  */
 
 /* ============================================
@@ -29,7 +29,7 @@
     background-attachment: fixed;
 }
 
-/* Optimiertes Overlay - Background sichtbarer */
+/* Optimiertes Overlay */
 .hero::before {
     content: '';
     position: absolute;
@@ -39,14 +39,14 @@
     bottom: 0;
     background: linear-gradient(
             135deg,
-            rgba(164, 178, 143, 0.55) 0%,
-            rgba(164, 178, 143, 0.45) 40%,
-            rgba(250, 248, 246, 0.65) 100%
+            rgba(164, 178, 143, 0.75) 0%,
+            rgba(164, 178, 143, 0.65) 40%,
+            rgba(250, 248, 246, 0.85) 100%
     );
     z-index: 1;
 }
 
-/* Hero Content */
+/* Hero Content über dem Overlay */
 .hero-content {
     max-width: 700px;
     margin: 0 auto;
@@ -82,6 +82,51 @@
 }
 
 /* ============================================
+   LOGO SECTION - MEHR AKZENT
+   ============================================ */
+
+.logo-section {
+    padding: 4rem 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(188, 201, 168, 0.15) 0%,
+            var(--color-white) 100%
+    );
+    border-top: 1px solid var(--color-accent-light);
+}
+
+.logo-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-circle {
+    width: 480px;
+    height: 480px;
+    object-fit: contain;
+    animation: fadeInScale 1s ease-out;
+    filter: drop-shadow(0 6px 16px rgba(164, 178, 143, 0.3));
+    transition: var(--transition);
+}
+
+.logo-circle:hover {
+    transform: scale(1.08) rotate(2deg);
+    filter: drop-shadow(0 8px 24px rgba(164, 178, 143, 0.45));
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ============================================
    CONTENT GRID
    ============================================ */
 
@@ -100,29 +145,56 @@
     direction: ltr;
 }
 
+.content-text h2 {
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.content-text h3 {
+    color: var(--color-accent-dark);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
 .content-text p {
     margin-bottom: 1.5rem;
     color: var(--color-secondary);
     line-height: 1.8;
 }
 
-/* Service List mit Hover */
+/* Service List mit mehr Akzent */
 .service-list {
     margin-top: 2rem;
 }
 
 .service-list li {
-    padding: 0.75rem 0;
+    padding: 0.75rem 0 0.75rem 1.5rem;
     border-bottom: 1px solid var(--color-border);
     color: var(--color-primary);
     font-weight: 400;
     transition: var(--transition);
+    position: relative;
+}
+
+.service-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: var(--transition);
 }
 
 .service-list li:hover {
-    color: var(--color-accent);
-    padding-left: 0.5rem;
-    border-bottom-color: var(--color-accent-light);
+    color: var(--color-accent-dark);
+    padding-left: 2rem;
+    border-bottom-color: var(--color-accent);
+}
+
+.service-list li:hover::before {
+    color: var(--color-accent-dark);
+    transform: translateX(3px);
 }
 
 .service-list li:last-child {
@@ -147,15 +219,16 @@
 }
 
 /* ============================================
-   CONTACT SECTION
+   CONTACT SECTION - MEHR AKZENT
    ============================================ */
 
 .section-contact {
     background: linear-gradient(
             to bottom,
-            var(--color-light) 0%,
-            rgba(188, 201, 168, 0.15) 100%
+            rgba(188, 201, 168, 0.12) 0%,
+            rgba(164, 178, 143, 0.08) 100%
     );
+    border-top: 2px solid var(--color-accent-light);
 }
 
 .contact-grid {
@@ -189,6 +262,16 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-left: 3px solid var(--color-accent);
+    transition: var(--transition);
+}
+
+.contact-item:hover {
+    background-color: rgba(188, 201, 168, 0.15);
+    border-left-color: var(--color-accent-dark);
+    transform: translateX(5px);
 }
 
 .contact-item strong {
@@ -196,16 +279,17 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--color-accent);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .contact-item a {
     color: var(--color-primary);
     transition: var(--transition);
+    font-weight: 500;
 }
 
 .contact-item a:hover {
-    color: var(--color-accent);
+    color: var(--color-accent-dark);
 }
 
 .contact-item span {
@@ -213,14 +297,20 @@
 }
 
 /* ============================================
-   CONTACT FORM
+   CONTACT FORM - MEHR AKZENT
    ============================================ */
 
 .contact-form {
     background-color: var(--color-white);
     padding: 2.5rem;
-    border: 1px solid var(--color-border);
-    box-shadow: 0 4px 20px rgba(164, 178, 143, 0.12);
+    border: 2px solid var(--color-accent-light);
+    box-shadow: 0 4px 20px rgba(164, 178, 143, 0.15);
+    transition: var(--transition);
+}
+
+.contact-form:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 24px rgba(164, 178, 143, 0.22);
 }
 
 .form-group {
@@ -231,8 +321,8 @@
     display: block;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
-    color: var(--color-primary);
-    font-weight: 400;
+    color: var(--color-accent-dark);
+    font-weight: 500;
 }
 
 .form-group input,
@@ -240,7 +330,7 @@
 .form-group textarea {
     width: 100%;
     padding: 0.9rem;
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-border);
     font-family: var(--font-primary);
     font-size: 0.95rem;
     color: var(--color-primary);
@@ -253,7 +343,7 @@
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(164, 178, 143, 0.15);
+    box-shadow: 0 0 0 3px rgba(164, 178, 143, 0.2);
 }
 
 .form-group textarea {
@@ -273,14 +363,14 @@
     display: block;
     background-color: rgba(164, 178, 143, 0.18);
     color: var(--color-accent-dark);
-    border: 1px solid var(--color-accent);
+    border: 2px solid var(--color-accent);
 }
 
 .form-message.error {
     display: block;
     background-color: #f8d7da;
     color: #721c24;
-    border: 1px solid #f5c6cb;
+    border: 2px solid #f5c6cb;
 }
 
 /* ============================================
@@ -288,20 +378,14 @@
    ============================================ */
 
 @media (max-width: 768px) {
-    .hero {
-        background-attachment: scroll;
-        min-height: 80vh;
-        padding: 6rem 0 3rem;
+    /* Logo-Section auf Mobile */
+    .logo-section {
+        padding: 3rem 0;
     }
 
-    /* Stärkeres Overlay auf Mobile */
-    .hero::before {
-        background: linear-gradient(
-                135deg,
-                rgba(164, 178, 143, 0.88) 0%,
-                rgba(164, 178, 143, 0.78) 50%,
-                rgba(250, 248, 246, 0.92) 100%
-        );
+    .logo-circle {
+        width: 140px;
+        height: 140px;
     }
 
     .hero-title {
@@ -334,10 +418,6 @@
 }
 
 @media (max-width: 480px) {
-    .hero {
-        min-height: 70vh;
-    }
-
     .hero-title {
         font-size: 2rem;
     }
