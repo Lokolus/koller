@@ -12,7 +12,7 @@
 $page_title = 'Fotografie';
 $page_description = 'Kreative Fotografie von Eva Koller. Portraits, Events und künstlerische Projekte mit Gefühl und Authentizität.';
 $page_css = 'fotografie.css';
-$page_js = null; // Keine seiten-spezifischen JS-Funktionen
+$page_js = 'fotografie.js'; // Scroll-Animationen und Interaktionen
 
 // Header einbinden
 include 'includes/header.php';
