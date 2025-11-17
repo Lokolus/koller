@@ -42,9 +42,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <!-- Logo -->
+                <!-- Logo als Text -->
                 <a href="index.php" class="logo">
-                    <img src="assets/images/logo.png" alt="Physio Eva Koller, BSc" class="logo-image">
+                    <div class="logo-text">
+                        <span class="logo-name">Eva Koller</span>
+                        <span class="logo-subtitle">BSc</span>
+                    </div>
                 </a>
                 
                 <!-- Desktop Navigation -->

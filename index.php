@@ -30,6 +30,15 @@ include 'includes/header.php';
     </div>
 </section>
 
+<!-- LOGO SECTION - Dekoratives Element -->
+<section class="logo-section">
+    <div class="container">
+        <div class="logo-display">
+            <img src="assets/images/logo.png" alt="Physio Eva Koller" class="logo-circle">
+        </div>
+    </div>
+</section>
+
 <!-- PHYSIOTHERAPIE SECTION -->
 <section id="physiotherapie" class="section">
     <div class="container">

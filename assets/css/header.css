@@ -1,10 +1,8 @@
-/* assets/css/header.css - KOMPLETT ÜBERARBEITET */
-
 /**
  * Header & Navigation Styles
- *
+ * 
  * Optimierter Header mit Logo und Corporate Identity
- *
+ * 
  * @package EvaKoller
  * @version 2.1 - Header Fix
  */
@@ -41,11 +39,10 @@
     min-height: 70px;
 }
 
-/* Logo mit Bild */
+/* Logo als Text */
 .logo {
     display: flex;
     align-items: center;
-    gap: 0;
     transition: var(--transition);
 }
 
@@ -53,14 +50,27 @@
     opacity: 0.85;
 }
 
-.logo-image {
-    height: 50px;
-    width: auto;
-    transition: var(--transition);
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
 }
 
-.logo:hover .logo-image {
-    transform: scale(1.03);
+.logo-name {
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+}
+
+.logo-subtitle {
+    font-family: var(--font-primary);
+    font-size: 0.7rem;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: -2px;
 }
 
 /* Navigation Menu */
@@ -120,18 +130,18 @@
         transition: var(--transition);
         background-color: transparent;
     }
-
+    
     .nav-link[href*="kontakt"]::after {
         display: none;
     }
-
+    
     .nav-link[href*="kontakt"]:hover {
         background-color: var(--color-accent);
         color: var(--color-white);
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(164, 178, 143, 0.35);
     }
-
+    
     .nav-link[href*="kontakt"].active {
         background-color: var(--color-accent);
         color: var(--color-white);
@@ -169,12 +179,16 @@
         padding: 0.6rem 0;
         min-height: 60px;
     }
-
-    /* Logo kleiner auf Mobile */
-    .logo-image {
-        height: 40px;
+    
+    /* Logo Text kleiner auf Mobile */
+    .logo-name {
+        font-size: 1.2rem;
     }
-
+    
+    .logo-subtitle {
+        font-size: 0.65rem;
+    }
+    
     /* Mobile Menu */
     .nav-menu {
         position: fixed;
@@ -190,39 +204,39 @@
         transition: var(--transition);
         align-items: flex-start;
     }
-
+    
     .nav-menu.active {
         left: 0;
     }
-
+    
     .nav-menu li {
         width: 100%;
         padding: 1rem 0;
         border-bottom: 1px solid var(--color-border);
     }
-
+    
     .nav-menu li:last-child {
         border-bottom: none;
     }
-
+    
     /* Toggle Button anzeigen */
     .nav-toggle {
         display: flex;
     }
-
+    
     /* Toggle Animation */
     .nav-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
-
+    
     .nav-toggle.active span:nth-child(2) {
         opacity: 0;
     }
-
+    
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
-
+    
     /* Kontakt Button auf Mobile */
     .nav-link[href*="kontakt"] {
         font-weight: 600;
