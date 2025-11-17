@@ -1,0 +1,306 @@
+/**
+ * Fotografie Page Styles
+ * 
+ * Styles speziell für die Fotografie-Seite
+ * 
+ * @package EvaKoller
+ * @version 1.0
+ */
+
+/* ============================================
+   PAGE HERO (wird von physiotherapie.css geerbt)
+   ============================================ */
+
+.page-hero {
+    padding: 10rem 0 6rem;
+    background-color: var(--color-light);
+    text-align: center;
+}
+
+.page-hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-family: var(--font-secondary);
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   INTRO TEXT
+   ============================================ */
+
+.intro-text {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lead {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--color-secondary);
+}
+
+/* ============================================
+   PHOTO SERVICES
+   ============================================ */
+
+.photo-services {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.photo-service-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.photo-service-card-reverse {
+    direction: rtl;
+}
+
+.photo-service-card-reverse > * {
+    direction: ltr;
+}
+
+.photo-service-image .placeholder-image {
+    aspect-ratio: 4/3;
+}
+
+.photo-service-content h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.photo-service-content p {
+    color: var(--color-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.photo-detail-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.photo-detail-list li {
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.photo-detail-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+}
+
+/* ============================================
+   CONTENT TWO COLUMN (für Arbeitsweise)
+   ============================================ */
+
+.content-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.content-col h3 {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.content-subtitle {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+}
+
+.content-col p {
+    color: var(--color-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   PROCESS STEPS
+   ============================================ */
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.process-step {
+    text-align: center;
+}
+
+.process-number {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+
+.process-step h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+
+.process-step p {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* ============================================
+   PORTFOLIO GRID
+   ============================================ */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.portfolio-item {
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio-image {
+    aspect-ratio: 1;
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-image {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-content .btn-primary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+}
+
+.cta-content .btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-white);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 968px) {
+    .photo-service-card,
+    .photo-service-card-reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content-two-col {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 8rem 0 4rem;
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .photo-detail-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+}

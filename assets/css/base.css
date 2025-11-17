@@ -1,0 +1,242 @@
+/**
+ * Base Styles
+ * 
+ * Grundlegende Styles die auf allen Seiten geladen werden
+ * Enthält: Reset, Variablen, Container, Typografie, Buttons, Footer
+ * 
+ * @package EvaKoller
+ * @version 1.0
+ */
+
+/* ============================================
+   RESET & GRUNDLEGENDE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   CSS VARIABLEN
+   ============================================ */
+
+:root {
+    /* Hauptfarben */
+    --color-primary: #2c2c2c;
+    --color-secondary: #666666;
+    
+    /* Corporate Identity - Olive-Grün aus Visitenkarte */
+    --color-accent: #A4B28F;
+    --color-accent-light: #BCC9A8;
+    --color-accent-dark: #8B9976;
+    --color-card-bg: #9BA687;
+    
+    /* Neutrale Farben */
+    --color-light: #F9FAF7;
+    --color-white: #ffffff;
+    --color-border: #E8EBE3;
+    
+    /* Schriftarten */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-secondary: Georgia, 'Times New Roman', serif;
+    
+    /* Transitions & Effects */
+    --transition: all 0.3s ease;
+    --shadow-sm: 0 2px 8px rgba(164, 178, 143, 0.15);
+    --shadow-md: 0 4px 16px rgba(164, 178, 143, 0.22);
+}
+
+/* ============================================
+   HTML & BODY
+   ============================================ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ============================================
+   TYPOGRAFIE
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+/* ============================================
+   SECTIONS
+   ============================================ */
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-alt {
+    background-color: var(--color-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: var(--font-secondary);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.section-line {
+    width: 60px;
+    height: 1px;
+    background-color: var(--color-accent);
+    margin: 0 auto;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    background-color: var(--color-card-bg);
+    color: var(--color-white);
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links a:hover {
+    color: var(--color-white);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.placeholder-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+    border-radius: 2px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .section {
+        padding: 4rem 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.9rem 2rem;
+        font-size: 0.9rem;
+    }
+}
