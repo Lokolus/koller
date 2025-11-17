@@ -370,9 +370,41 @@ img {
     justify-content: center;
     color: var(--color-secondary);
     font-size: 0.9rem;
-    border-radius: 2px;
-    background-color: var(--color-light);
-    border: 2px dashed var(--color-accent-light);
+    border-radius: 4px;
+    background: linear-gradient(
+            135deg,
+            var(--color-light) 0%,
+            rgba(188, 201, 168, 0.08) 100%
+    );
+    border: 2px solid var(--color-accent-light);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(164, 178, 143, 0.05) 50%,
+            transparent 70%
+    );
+    pointer-events: none;
+}
+
+.placeholder-image:hover {
+    border-color: var(--color-accent);
+    background: linear-gradient(
+            135deg,
+            rgba(188, 201, 168, 0.12) 0%,
+            rgba(164, 178, 143, 0.08) 100%
+    );
 }
 
 /* ============================================
