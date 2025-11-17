@@ -125,14 +125,14 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('hashchange', setActiveNavLink);
     
     /* ============================================
-       SCROLL ANIMATIONS (Fade In)
+       SCROLL ANIMATIONS (Fade In) - Smooth & Ruhig
        ============================================ */
-    
+
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.08,
+        rootMargin: '0px 0px -80px 0px'
     };
-    
+
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -141,13 +141,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, observerOptions);
-    
+
     // Observe sections for fade-in animation
     const animatedElements = document.querySelectorAll('.section');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
         observer.observe(el);
     });
     
