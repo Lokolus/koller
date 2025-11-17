@@ -1,10 +1,10 @@
 /**
  * Header & Navigation Styles
- * 
- * Optimierter Header mit Logo und Corporate Identity
- * 
+ *
+ * Optimierter Header mit Serif-Logo und mehr Akzentfarbe
+ *
  * @package EvaKoller
- * @version 2.1 - Header Fix
+ * @version 2.2 - Serif Logo + Mehr Akzentfarbe
  */
 
 /* ============================================
@@ -17,14 +17,15 @@
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.98);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-accent-light);
     z-index: 1000;
     transition: var(--transition);
     backdrop-filter: blur(10px);
 }
 
 .header.scrolled {
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--color-accent);
 }
 
 /* ============================================
@@ -39,7 +40,7 @@
     min-height: 70px;
 }
 
-/* Logo als Text */
+/* Logo als Text - SERIF */
 .logo {
     display: flex;
     align-items: center;
@@ -47,7 +48,8 @@
 }
 
 .logo:hover {
-    opacity: 0.85;
+    opacity: 0.8;
+    transform: translateY(-1px);
 }
 
 .logo-text {
@@ -58,19 +60,20 @@
 
 .logo-name {
     font-family: var(--font-secondary);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: var(--color-primary);
     letter-spacing: 0.5px;
 }
 
 .logo-subtitle {
-    font-family: var(--font-primary);
-    font-size: 0.7rem;
+    font-family: var(--font-secondary);
+    font-size: 0.75rem;
     color: var(--color-accent);
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: -2px;
+    font-weight: 400;
 }
 
 /* Navigation Menu */
@@ -96,13 +99,13 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(to right, var(--color-accent-light), var(--color-accent));
+    background: var(--color-accent);
     transition: var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--color-accent-dark);
+    color: var(--color-accent);
 }
 
 .nav-link:hover::after,
@@ -125,23 +128,23 @@
     .nav-link[href*="kontakt"] {
         margin-left: 0.5rem;
         padding: 0.5rem 1.2rem;
-        border: 1.5px solid var(--color-accent);
+        border: 2px solid var(--color-accent);
         border-radius: 2px;
         transition: var(--transition);
         background-color: transparent;
     }
-    
+
     .nav-link[href*="kontakt"]::after {
         display: none;
     }
-    
+
     .nav-link[href*="kontakt"]:hover {
         background-color: var(--color-accent);
         color: var(--color-white);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(164, 178, 143, 0.35);
+        box-shadow: 0 4px 12px rgba(164, 178, 143, 0.4);
     }
-    
+
     .nav-link[href*="kontakt"].active {
         background-color: var(--color-accent);
         color: var(--color-white);
@@ -179,16 +182,16 @@
         padding: 0.6rem 0;
         min-height: 60px;
     }
-    
+
     /* Logo Text kleiner auf Mobile */
     .logo-name {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
-    
+
     .logo-subtitle {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
-    
+
     /* Mobile Menu */
     .nav-menu {
         position: fixed;
@@ -200,43 +203,43 @@
         flex-direction: column;
         gap: 0;
         padding: 1.5rem 2rem;
-        border-bottom: 1px solid var(--color-border);
+        border-bottom: 2px solid var(--color-accent);
         transition: var(--transition);
         align-items: flex-start;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-menu li {
         width: 100%;
         padding: 1rem 0;
         border-bottom: 1px solid var(--color-border);
     }
-    
+
     .nav-menu li:last-child {
         border-bottom: none;
     }
-    
+
     /* Toggle Button anzeigen */
     .nav-toggle {
         display: flex;
     }
-    
+
     /* Toggle Animation */
     .nav-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
-    
+
     .nav-toggle.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .nav-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(6px, -6px);
     }
-    
+
     /* Kontakt Button auf Mobile */
     .nav-link[href*="kontakt"] {
         font-weight: 600;

@@ -22,7 +22,7 @@ include 'includes/header.php';
 <section class="hero">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Eva Koller</h1>
+            <h1 class="hero-title">Eva Koller, BSc.</h1>
             <p class="hero-subtitle">Physiotherapeutin & Fotografin</p>
             <p class="hero-text">Bewegung verstehen. Momente festhalten. Mit Fachwissen, Feingefühl und kreativer Leidenschaft.</p>
             <a href="#kontakt" class="btn btn-primary">Termin anfragen</a>
@@ -91,20 +91,6 @@ include 'includes/header.php';
                     <li>Individuelle Shootings</li>
                 </ul>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- ÜBER MICH SECTION -->
-<section id="ueber-mich" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Über mich</h2>
-            <div class="section-line"></div>
-        </div>
-        <div class="about-content">
-            <p class="about-text">Zwei Leidenschaften prägen mein Leben: die Arbeit mit Menschen in der Physiotherapie und die kreative Ausdrucksform der Fotografie. Beide Bereiche verbindet die Aufmerksamkeit für Details, das Einfühlungsvermögen und der Wunsch, etwas Positives zu bewirken.</p>
-            <p class="about-text">In meiner Praxis schaffe ich Raum für Heilung und Entwicklung. Mit der Kamera halte ich die Schönheit des Augenblicks fest. Beides erfüllt mich mit tiefer Zufriedenheit.</p>
         </div>
     </div>
 </section>

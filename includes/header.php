@@ -45,8 +45,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                 <!-- Logo als Text -->
                 <a href="index.php" class="logo">
                     <div class="logo-text">
-                        <span class="logo-name">Eva Koller</span>
-                        <span class="logo-subtitle">BSc</span>
+                        <span class="logo-name">Eva Koller</span> <span class="logo-subtitle">BSc.</span>
                     </div>
                 </a>
                 

@@ -1,11 +1,11 @@
 /**
  * Base Styles
- * 
+ *
  * Grundlegende Styles die auf allen Seiten geladen werden
- * Enthält: Reset, Variablen, Container, Typografie, Buttons, Footer
- * 
+ * Corporate Identity: Olive-Grün (#A4B28F) mit mehr Akzenten
+ *
  * @package EvaKoller
- * @version 1.0
+ * @version 2.2 - Mehr Akzentfarbe
  */
 
 /* ============================================
@@ -19,29 +19,29 @@
 }
 
 /* ============================================
-   CSS VARIABLEN
+   CSS VARIABLEN - OLIVE-GRÜN CORPORATE IDENTITY
    ============================================ */
 
 :root {
     /* Hauptfarben */
     --color-primary: #2c2c2c;
-    --color-secondary: #666666;
-    
+    --color-secondary: #403f3f;
+
     /* Corporate Identity - Olive-Grün aus Visitenkarte */
-    --color-accent: #A4B28F;
+    --color-accent: #515151;
     --color-accent-light: #BCC9A8;
     --color-accent-dark: #8B9976;
     --color-card-bg: #9BA687;
-    
+
     /* Neutrale Farben */
     --color-light: #F9FAF7;
     --color-white: #ffffff;
     --color-border: #E8EBE3;
-    
+
     /* Schriftarten */
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-secondary: Georgia, 'Times New Roman', serif;
-    
+
     /* Transitions & Effects */
     --transition: all 0.3s ease;
     --shadow-sm: 0 2px 8px rgba(164, 178, 143, 0.15);
@@ -102,14 +102,14 @@ img {
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS - MEHR AKZENTFARBE
    ============================================ */
 
 .btn {
     display: inline-block;
     padding: 1rem 2.5rem;
     font-size: 0.95rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 1px;
     border: none;
     cursor: pointer;
@@ -118,14 +118,21 @@ img {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-accent);
     color: var(--color-white);
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 2px 8px rgba(164, 178, 143, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-white);
-    color: var(--color-primary);
+    background-color: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(164, 178, 143, 0.45);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
 }
 
 /* ============================================
@@ -137,7 +144,11 @@ img {
 }
 
 .section-alt {
-    background-color: var(--color-light);
+    background: linear-gradient(
+            to bottom,
+            var(--color-light) 0%,
+            rgba(188, 201, 168, 0.1) 100%
+    );
 }
 
 .section-header {
@@ -155,20 +166,26 @@ img {
 }
 
 .section-line {
-    width: 60px;
-    height: 1px;
-    background-color: var(--color-accent);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, var(--color-accent-light), var(--color-accent), var(--color-accent-dark));
     margin: 0 auto;
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - MEHR AKZENTFARBE
    ============================================ */
 
 .footer {
-    background-color: var(--color-card-bg);
+    background: linear-gradient(
+            135deg,
+            var(--color-accent-dark) 0%,
+            var(--color-card-bg) 50%,
+            var(--color-accent) 100%
+    );
     color: var(--color-white);
-    padding: 2rem 0;
+    padding: 2.5rem 0;
+    border-top: 3px solid var(--color-accent-light);
 }
 
 .footer-content {
@@ -179,7 +196,7 @@ img {
 
 .footer-content p {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .footer-links {
@@ -189,11 +206,27 @@ img {
 
 .footer-links a {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white);
+    transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--color-white);
+}
+
+.footer-links a:hover::after {
+    width: 100%;
 }
 
 /* ============================================
@@ -208,6 +241,8 @@ img {
     color: var(--color-secondary);
     font-size: 0.9rem;
     border-radius: 2px;
+    background-color: var(--color-light);
+    border: 2px dashed var(--color-accent-light);
 }
 
 /* ============================================
@@ -218,15 +253,19 @@ img {
     .container {
         padding: 0 1.5rem;
     }
-    
+
     .section {
         padding: 4rem 0;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
+    .footer {
+        padding: 2rem 0;
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 1rem;
